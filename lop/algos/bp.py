@@ -17,6 +17,7 @@ class Backprop(object):
         elif opt == 'adam':
             self.opt = optim.Adam(self.net.parameters(), lr=step_size, betas=(beta_1, beta_2),
                                   weight_decay=weight_decay)
+            #print("here")
         elif opt == 'adamW':
             self.opt = optim.AdamW(self.net.parameters(), lr=step_size, betas=(beta_1, beta_2),
                                    weight_decay=weight_decay)

@@ -3,9 +3,9 @@
 
   "_comment_1_": "List of problem/experiment parameters",
   "gen_prob_data": true,
-  "num_runs":  100,
+  "num_runs":  500,
   "num_inputs": 20,
-  "num_data_points": 1e7,
+  "num_data_points": 5e6,
   "data_dir": "",
   "env_data_dir": "data/env_data/scr/",
   "flip_after": 10000,
@@ -17,7 +17,7 @@
   "agent": "bp",
   "num_features": 5,
   "hidden_activation": "relu",
-  "opt": "sgd",
+  "opt": "adam",
   "step_size": 0,
   "replacement_rate": 0,
   "decay_rate": 0
