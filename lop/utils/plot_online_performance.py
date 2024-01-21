@@ -45,18 +45,18 @@ def generate_online_performance_plot(
     # h.set_rotation(0)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
-    if xticks_labels is None:
-        xticks_labels = xticks
-    ax.set_xticks(xticks)
-    ax.set_xticklabels(xticks_labels, fontsize=fontsize)
-    if len(yticks) > 0:
-        ax.set_yticks(yticks)
-        ax.set_ylim(yticks[0], yticks[-1])
-    if yticks_labels is not None:
-        ax.set_yticklabels(yticks_labels, fontsize=fontsize)
-    elif len(yticks) > 0:
-        ax.set_yticklabels(yticks, fontsize=fontsize)
-        ax.set_ylim(yticks[0], yticks[-1])
+    # if xticks_labels is None:
+    #     xticks_labels = xticks
+    # ax.set_xticks(xticks)
+    # ax.set_xticklabels(xticks_labels, fontsize=fontsize)
+    # if len(yticks) > 0:
+    #     ax.set_yticks(yticks)
+    #     ax.set_ylim(yticks[0], yticks[-1])
+    # if yticks_labels is not None:
+    #     ax.set_yticklabels(yticks_labels, fontsize=fontsize)
+    # elif len(yticks) > 0:
+    #     ax.set_yticklabels(yticks, fontsize=fontsize)
+    #     ax.set_ylim(yticks[0], yticks[-1])
 
     if log_scale_y:
         ax.set_yscale('log')

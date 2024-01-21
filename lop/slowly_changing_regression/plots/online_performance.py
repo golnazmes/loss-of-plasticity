@@ -11,10 +11,12 @@ def add_cfg_performance(cfg='', setting_idx=0, m=2*10*1000, num_runs=30):
         params = json.load(f)
     list_params, param_settings = get_configurations(params=params)
     per_param_setting_performance = []
-    for idx in range(num_runs):
+    for idx in range(1):
         file = '../' + params['data_dir'] + str(setting_idx) + '/' + str(idx)
+        print("here is the file name:", file)
         with open(file, 'rb') as f:
             data = pickle.load(f)
+            print(data)
 
         # Online performance
         per_param_setting_performance.append(np.array(bin_m_errs(errs=data['errs'], m=m)))
@@ -40,11 +42,11 @@ def main(arguments):
     _, param_settings = get_configurations(params=params)
     labels = param_settings
     num_runs = params['num_runs']
-    indices = [i for i in range(3)]
+    indices = [i for i in range(1)]
     for i in indices:
         performances.append(add_cfg_performance(cfg=cfg_file, setting_idx=i, m=m, num_runs=num_runs))
-    performances.append(add_cfg_performance(cfg='../cfg/' + params['opt'] + '/bp/linear.json', setting_idx=0, m=m, num_runs=num_runs))
-    labels.append('linear')
+    #performances.append(add_cfg_performance(cfg='../cfg/' + params['opt'] + '/bp/linear.json', setting_idx=0, m=m, num_runs=num_runs))
+    #labels.append('linear')
     performances = np.array(performances)
 
     if params['hidden_activation'] in ['relu', 'swish', 'leaky_relu']:
@@ -55,8 +57,8 @@ def main(arguments):
     generate_online_performance_plot(
         performances=performances,
         colors=['C3', 'C4', 'C5', 'C8'],
-        yticks=yticks,
-        xticks=[0, 500000, 1000000],
+        #yticks=yticks,
+        #xticks=[0, 500000, 1000000],
         xticks_labels=['0', '0.5M', '1M'],
         m=m,
         labels=labels
