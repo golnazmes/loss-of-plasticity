@@ -3,9 +3,9 @@
 
   "_comment_1_": "List of problem/experiment parameters",
   "gen_prob_data": false,
-  "num_runs":  100,
+  "num_runs":  300,
   "num_inputs": 20,
-  "num_data_points": 1e6,
+  "num_data_points": 3e6,
   "data_dir": "data/sgd/bp/relu/",
   "env_data_dir": "data/env_data/scr/",
   "flip_after": 10000,
