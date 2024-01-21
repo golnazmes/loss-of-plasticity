@@ -11,3 +11,9 @@ __pycache__/
 *.pyc
 data/
 .DS_Store
+venv/
+.python-version
+lop/slowly_changing_regression/*.out
+lop/slowly_changing_regression/*.error
+lop/slowly_changing_regression/plots/*.png
+
